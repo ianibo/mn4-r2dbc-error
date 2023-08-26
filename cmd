@@ -1,0 +1,1 @@
+mn create-app --build=gradle --jdk=17 --lang=java --test=junit --features=data-r2dbc,r2dbc,postgres,micrometer-datadog,validation,lombok,graalvm,openapi,micronaut-http-validation,security-jwt,flyway explore

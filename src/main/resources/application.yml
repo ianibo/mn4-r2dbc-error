@@ -1,0 +1,40 @@
+micronaut:
+  application:
+    name: dcb
+
+
+flyway:
+  enabled: true
+  datasources:
+    default:
+      enabled: true
+
+datasources:
+  default:
+    enabled: true
+    dialect: POSTGRES
+    driverClassName: org.postgresql.Driver
+    schema-generate: NONE
+    db-type: postgresql
+    minimumIdle: 0
+    maximumPoolSize: 2
+    reconnect: true
+ 
+r2dbc:
+  datasources:
+    default:
+      enabled: true
+      dialect: POSTGRES
+      db-type: postgres
+      reconnect: true
+      schema-generate: NONE
+      options:
+        driver: pool
+        protocol: postgresql
+        poolName: r2dbc
+        maxSize: 20
+        initialSize: 5
+        maxIdleTime: PT240S
+        validationQuery: "SELECT 1"
+        validationDepth: REMOTE
+
